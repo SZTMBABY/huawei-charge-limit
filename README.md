@@ -3,7 +3,6 @@
 [![Release](https://img.shields.io/github/v/release/SZTMBABY/huawei-charge-limit?display_name=release&sort=semver)](https://github.com/SZTMBABY/huawei-charge-limit/releases/latest)
 [![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11%20%C2%B7%20x64%2FARM64-lightgrey)](#适用机型)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
-[![Build](https://github.com/SZTMBABY/huawei-charge-limit/actions/workflows/build.yml/badge.svg)](https://github.com/SZTMBABY/huawei-charge-limit/actions/workflows/build.yml)
 
 给**没有"智能充电/充电阈值"选项的华为 MateBook**（尤其高通 SoC 机型）补上 Windows 端的充电上限设置：插着电也就充到 90%（或任意 50~100%），掉到下限以下才补电，减缓长期插电造成的电池老化。
 
