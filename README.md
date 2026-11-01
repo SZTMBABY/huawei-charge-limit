@@ -18,9 +18,9 @@
 
 ## 下载
 
-到 [Releases](https://github.com/SZTMBABY/huawei-charge-limit/releases/latest) 下载 `充电限制工具.exe`（单文件，不需要安装）。首次运行若被 SmartScreen 拦截，点「更多信息 → 仍要运行」。
+到 [Releases](https://github.com/SZTMBABY/huawei-charge-limit/releases/latest) 下载 `HuaweiChargeLimit.exe`（即「充电限制工具」，单文件，不需要安装）。首次运行若被 SmartScreen 拦截，点「更多信息 → 仍要运行」。
 
-校验和随 Release 一并提供；介意未签名 exe 的话，可以直接用 `源码\build.ps1` 自己编译比对（见「构建」）。
+Release 里另附 `SHA256SUMS.txt` 校验和；介意未签名 exe 的话，可以直接用 `源码\build.ps1` 自己编译比对（见「构建」）。
 
 > 本项目**不是**华为官方软件，与华为公司无关。使用风险自负，详见「风险与免责」。
 
