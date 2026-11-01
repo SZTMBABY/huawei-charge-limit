@@ -1,0 +1,83 @@
+name: Bug 报告
+description: 程序报错、应用失败、界面异常、日志异常
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        提之前请先跑一次 `充电限制工具.exe --selftest`，并确认 `README.md` 的「自检 / 排错」一节没有覆盖你的情况。
+        **贴日志前请把本机用户名、路径打码。**
+
+  - type: input
+    id: version
+    attributes:
+      label: 版本
+      description: 见 CHANGELOG.md 或程序标题栏
+      placeholder: v1.0.2
+    validations:
+      required: true
+
+  - type: input
+    id: device
+    attributes:
+      label: 机型与 BIOS 版本
+      placeholder: HUAWEI MateBook E Go 2023（GK-W7X），BIOS 2.16
+    validations:
+      required: true
+
+  - type: input
+    id: os
+    attributes:
+      label: Windows 版本与架构
+      placeholder: Windows 11 24H2 (26100)，ARM64
+    validations:
+      required: true
+
+  - type: textarea
+    id: what
+    attributes:
+      label: 现象
+      description: 你点了什么、期望发生什么、实际发生了什么
+      placeholder: |
+        点「应用 90 / 80」后……
+    validations:
+      required: true
+
+  - type: textarea
+    id: selftest
+    attributes:
+      label: --selftest 结果
+      description: 贴 `%LOCALAPPDATA%\HuaweiChargeLimit\自检结果.txt` 的内容（打码后）
+      render: text
+    validations:
+      required: false
+
+  - type: textarea
+    id: log
+    attributes:
+      label: 操作记录.log 相关行
+      description: 最近 10~20 行即可，注意保留「接口=」字段
+      render: text
+    validations:
+      required: false
+
+  - type: textarea
+    id: fail
+    attributes:
+      label: 最近失败.txt（如果有）
+      description: 只有失败时才会生成
+      render: text
+    validations:
+      required: false
+
+  - type: dropdown
+    id: auto
+    attributes:
+      label: 是否开启「开机时自动重设」
+      options:
+        - 开启
+        - 关闭
+        - 不确定
+    validations:
+      required: true

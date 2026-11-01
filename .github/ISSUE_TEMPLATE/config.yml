@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 先看文档再提问
+    url: https://github.com/SZTMBABY/huawei-charge-limit#自检--排错
+    about: README 的「自检 / 排错」「彻底卸载」两节覆盖了大部分问题
+  - name: 安全问题请走私密渠道
+    url: https://github.com/SZTMBABY/huawei-charge-limit/security/advisories/new
+    about: 提权、脚本保护、命令注入类问题请用私有安全公告，不要开公开 Issue

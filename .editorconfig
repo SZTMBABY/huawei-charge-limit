@@ -1,0 +1,14 @@
+root = true
+
+[*]
+end_of_line = crlf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.md]
+end_of_line = lf
+trim_trailing_whitespace = false
+
+# Program.cs / build.ps1 必须带 UTF-8 BOM，否则 PowerShell 5.1 会按 GBK 解析
+[*.{cs,ps1}]
+charset = utf-8-bom

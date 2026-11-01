@@ -1,0 +1,76 @@
+name: 机型适配报告
+description: 在新机型上试用了本工具，报告是否生效
+title: "[机型] "
+labels: ["device-report"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        本工具写的是华为固件暴露的 `ACPI\PNP0C14\HWMI` WMI 接口，不同机型/BIOS 的支持情况需要一台台验证。
+        即使**不生效**也很有价值：可以帮 README 的机型表补上"不适用"。
+
+  - type: input
+    id: model
+    attributes:
+      label: 机型全称与型号代码
+      placeholder: HUAWEI MateBook 14s（HKF-WXX）
+    validations:
+      required: true
+
+  - type: input
+    id: bios
+    attributes:
+      label: BIOS 版本
+      description: 可在 `msinfo32` 或华为电脑管家里查看
+    validations:
+      required: true
+
+  - type: input
+    id: os
+    attributes:
+      label: Windows 版本与架构
+      placeholder: Windows 11 26100，ARM64
+    validations:
+      required: true
+
+  - type: textarea
+    id: hwmi
+    attributes:
+      label: HWMI 设备是否存在
+      description: 在 PowerShell 里执行下面的命令，把输出贴上来（没有输出即为不存在）
+      placeholder: Get-PnpDevice -InstanceId 'ACPI\PNP0C14\HWMI*'
+      render: text
+    validations:
+      required: true
+
+  - type: dropdown
+    id: pm
+    attributes:
+      label: 华为电脑管家的「智能充电」在该机型上可用吗
+      options:
+        - 可用
+        - 不可用
+        - 没有电脑管家 / 不确定
+    validations:
+      required: true
+
+  - type: dropdown
+    id: result
+    attributes:
+      label: 本工具的结果
+      options:
+        - 生效（上限被限制住了）
+        - 不生效（照旧充到 100%）
+        - 报错
+        - 还没试
+    validations:
+      required: true
+
+  - type: textarea
+    id: detail
+    attributes:
+      label: 细节
+      description: 例如：日志里走的是哪条通道（进程内WMI / 默认接口 / 新版接口 / 旧工具兜底）、是否免 UAC、登录自动重设是否生效、界面显示是否正常
+      render: text
+    validations:
+      required: false
