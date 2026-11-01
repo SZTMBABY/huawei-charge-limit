@@ -25,6 +25,25 @@ Release 里另附 `SHA256SUMS.txt` 校验和；介意未签名 exe 的话，可�
 
 > 本项目**不是**华为官方软件，与华为公司无关。使用风险自负，详见「风险与免责」。
 
+## English
+
+Huawei MateBook E Go (codename **gaokun**, e.g. GK-W7X) exposes no charge-limit setting in Windows — Huawei PC Manager has no "Smart Charging" switch there, so a plugged-in machine simply sits at 100%.
+
+**Huawei Charge Limit** is a single-file WPF tool that sets the charge threshold the same way Huawei's own software does: it writes to the EC through the firmware's WMI interface (`ACPI\PNP0C14\HWMI`, `root\wmi` → `OemWMIMethod.OemWMIfun`). No firmware flashing, no BIOS modification; setting 100/0 restores stock behaviour.
+
+- Single 196 KB exe — no installer, no extra runtime (uses the built-in .NET Framework 4.x)
+- One UAC prompt for "Initialize"; later threshold changes need no elevation (a scheduled task performs the write)
+- Re-applies the threshold ~30 s after logon, because the EC value does not survive a hard reset or power loss
+- Self-check: `HuaweiChargeLimit.exe --selftest`
+
+**Tested on**: HUAWEI MateBook E Go 2023 (GK-W7X, Qualcomm sc8280xp), Windows 11 ARM64 26100, BIOS 2.16.
+
+**Download**: [Releases](https://github.com/SZTMBABY/huawei-charge-limit/releases/latest) → `HuaweiChargeLimit.exe`.
+
+License: MIT for this project; the bundled third-party `HuaweiBatteryControl` binaries stay under MPL-2.0 (see [NOTICE.md](NOTICE.md)).
+
+> Keywords: Huawei MateBook charge limit, charge threshold, battery charge limiter, gaokun, GK-W7X, MateBook E Go, Windows on ARM.
+
 ---
 
 ## 适用机型
