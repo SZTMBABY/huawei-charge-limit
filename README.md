@@ -6,6 +6,8 @@
 
 给**没有"智能充电/充电阈值"选项的华为 MateBook**（尤其高通 SoC 机型）补上 Windows 端的充电上限设置：插着电也就充到 90%（或任意 50~100%），掉到下限以下才补电，减缓长期插电造成的电池老化。
 
+> 关键词：华为 MateBook 充电限制 / 智能充电替代 / 充电阈值 / gaokun / GK-W7X / Huawei MateBook charge limit
+
 ![界面](界面预览.png)
 
 - 单文件 WPF 程序，**零安装、零运行时依赖**（用系统自带的 .NET Framework 4.x）
@@ -29,7 +31,7 @@ Release 里另附 `SHA256SUMS.txt` 校验和；介意未签名 exe 的话，可�
 
 | 机型 | 状态 |
 |---|---|
-| HUAWEI MateBook E Go 2023（GK-W7X，Qualcomm sc8280xp） | ✅ 实测通过（Windows 11 ARM64 26100，BIOS 2.16） |
+| HUAWEI MateBook E Go 2023（GK-W7X，代号 gaokun，Qualcomm sc8280xp） | ✅ 实测通过（Windows 11 ARM64 26100，BIOS 2.16） |
 
 理论上凡是设备树里存在 `ACPI\PNP0C14\HWMI` 设备的华为消费本都适用（华为 PC Manager 的"智能充电"走的就是同一接口）。判断方法：设备管理器 → 系统设备里找 `HWMI` 设备，或在 PowerShell 里执行：
 
