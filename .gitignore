@@ -1,0 +1,17 @@
+# 编译/打包产物
+*.zip
+bin/
+obj/
+_package/
+dist/
+
+# 本地编译出的程序本体：发布时作为 Release 附件上传，不进 Git 历史
+/充电限制工具.exe
+/Launcher.exe
+
+# 运行时生成（不应进仓库）
+*.log
+自检结果.txt
+最近失败.txt
+配置.ini
+应用阈值.ps1
